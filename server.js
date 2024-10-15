@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 //criando a  rota get
-app.get('/usuarios', async(req, res)=>{
+app.get('/', async(req, res)=>{
     let users = [];
     if (req.query){
         users = await prisma.user.findMany({
@@ -23,7 +23,7 @@ app.get('/usuarios', async(req, res)=>{
 })
 
 //criando a rota post
-app.post('/usuarios', async(req, res)=>{
+app.post('/', async(req, res)=>{
    await prisma.user.create({
         data:{
             email: req.body.email,
@@ -35,7 +35,7 @@ app.post('/usuarios', async(req, res)=>{
 })
 
 //Criando rota PUT
-app.put('/usuarios/:id', async(req, res)=>{
+app.put('/:id', async(req, res)=>{
     await prisma.User.update({
         where:{
             id: req.params.id
@@ -50,7 +50,7 @@ app.put('/usuarios/:id', async(req, res)=>{
  })
 
  //Criando Rota DELETE
- app.delete('/usuarios/:id', async(req,res)=>{
+ app.delete('/:id', async(req,res)=>{
     await prisma.user.delete({
         where: {
             id: req.params.id
