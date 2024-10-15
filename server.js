@@ -24,7 +24,7 @@ app.get('/usuarios', async(req, res)=>{
 
 //criando a rota post
 app.post('/usuarios', async(req, res)=>{
-   await prisma.User.create({
+   await prisma.user.create({
         data:{
             email: req.body.email,
             name: req.body.name,
