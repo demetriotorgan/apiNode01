@@ -61,7 +61,7 @@ app.put('/usuarios/:id', async(req, res)=>{
  
 app.listen(3000)
 
-export default app
+export default app;
 
 
 /*
