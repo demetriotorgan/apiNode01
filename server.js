@@ -2,7 +2,7 @@ import express from 'express'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
-const app = express()
+const app = express();
 app.use(express.json());
 
 //criando a  rota get
@@ -61,6 +61,7 @@ app.put('/usuarios/:id', async(req, res)=>{
  
 app.listen(3000)
 
+export default app
 
 
 /*
